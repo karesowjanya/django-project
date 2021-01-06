@@ -1,0 +1,17 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Programming {% endblock %}
+{% block content %}
+<script type="text/javascript" src="{% static 'js/sample.js' %}"></script>
+
+<div class="container text-center">
+	<img src="{% static 'images/c2.jpg' %}" width="20%" height="30%">
+    <b><h1>WELCOME TO C LEARNING TUTORIALS</h1></b>
+    <div class="card">
+    	<i>C is a powerful general-purpose programming language. It can be used to develop software like operating systems, databases, compilers, and so on. C programming is an excellent language to learn to program for beginners.
+
+Our C tutorials will guide you to learn C programming one step at a time.</i>
+    </div>
+	<a href="{% url 'strt' %}" class="btn md btn-success mt-5">start learning</a>
+</div> 
+{% endblock %}

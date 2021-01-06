@@ -1,0 +1,159 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Learning {% endblock %}
+{% block content %}
+<div class="container card">
+    <div class="row">
+      <div class="card col-sm-2" style="background-color: #F5DEB3;">
+         <nav class="navbar" style="background-color: #F5DEB3;">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'strt' %}">Introduction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cdf' %}">C Dataflow</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'funcs' %}">C Functions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'arrays' %}">C Arrays</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pointer' %}">C Pointers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'stri' %}">C Strings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'struct' %}">C Structures and unions</a>
+          </li>
+      </nav>
+    </div>
+    <div class="card col-sm">
+      <h1 class="text-warning text-center">Strings</h1>
+    <p>strings are actually one-dimensional array of characters terminated by a <b>null</b> character '\0'. Thus a null-terminated string contains the characters that comprise the string followed by a <b>null</b>.</p>
+      <p>The following declaration and initialization create a string consisting of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."</p>
+      <div class="jumbotron">
+      <pre >
+      char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+      </pre>
+      </div>
+      <p>If you follow the rule of array initialization then you can write the above statement as follows &minus;</p>
+      <div class="jumbotron">
+      <pre>
+      char greeting[] = "Hello";
+      </pre>
+      </div>
+      <p>Following is the memory presentation of the above defined string in C/C++ &minus;</p>
+      <img src="{% static 'images/string.jpg' %}" alt="String Presentation in C/C++"/>
+      <p>Actually, you do not place the <i>null</i> character at the end of a string constant. The C compiler automatically places the '\0' at the end of the string when it initializes the array. Let us try to print the above mentioned string &minus;</p>
+      <div class="jumbotron">
+      <pre >
+      #include &lt;stdio.h&gt;
+
+      int main () {
+
+         char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+         printf("Greeting message: %s\n", greeting );
+         return 0;
+      }
+      </pre>
+      </div>
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <div class="jumbotron">
+      <pre >
+      Greeting message: Hello
+      </pre>
+      </div>
+      <p>C supports a wide range of functions that manipulate null-terminated strings &minus;</p>
+      <table class="table table-bordered">
+      <tr>
+      <th>Sr.No.</th>
+      <th style="text-align:center;">Function &amp; Purpose</th>
+      </tr>
+      <tr>
+      <td class="ts">1</td>
+      <td><p><b>strcpy(s1, s2);</b></p>
+      <p>Copies string s2 into string s1.</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="ts">2</td>
+      <td><p><b>strcat(s1, s2);</b></p>
+      <p>Concatenates string s2 onto the end of string s1.</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="ts">3</td>
+      <td><p><b>strlen(s1);</b></p>
+      <p>Returns the length of string s1.</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="ts">4</td>
+      <td><p><b>strcmp(s1, s2);</b></p>
+      <p>Returns 0 if s1 and s2 are the same; less than 0 if s1&lt;s2; greater than 0 if s1&gt;s2.</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="ts">5</td>
+      <td><p><b>strchr(s1, ch);</b></p>
+      <p>Returns a pointer to the first occurrence of character ch in string s1.</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="ts">6</td>
+      <td><p><b>strstr(s1, s2);</b></p>
+      <p>Returns a pointer to the first occurrence of string s2 in string s1.</p>
+      </td>
+      </tr>
+      </table>
+      <p>The following example uses some of the above-mentioned functions &minus;</p>
+      <div class="jumbotron">
+      <pre >
+      #include &lt;stdio.h&gt;
+      #include &lt;string.h&gt;
+
+      int main () {
+
+         char str1[12] = "Hello";
+         char str2[12] = "World";
+         char str3[12];
+         int  len ;
+
+         /* copy str1 into str3 */
+         strcpy(str3, str1);
+         printf("strcpy( str3, str1) :  %s\n", str3 );
+
+         /* concatenates str1 and str2 */
+         strcat( str1, str2);
+         printf("strcat( str1, str2):   %s\n", str1 );
+
+         /* total lenghth of str1 after concatenation */
+         len = strlen(str1);
+         printf("strlen(str1) :  %d\n", len );
+
+         return 0;
+      }
+      </pre>
+      </div>
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <div class="jumbotron">
+      <pre >
+      strcpy( str3, str1) :  Hello
+      strcat( str1, str2):   HelloWorld
+      strlen(str1) :  10
+      </pre>
+    </div>
+  </div>
+</div><br>
+<div class="row ml-5">
+          <div classs="col-7 text-left mb-5 ml-4">
+            <a href="{% url 'pointer' %}" class="btn btn-warning">Previous</a>
+          </div>
+          <div class="col text-right mb-5 mr-5">
+            <a href="{% url 'struct+' %}" class="btn btn-warning">Next</a>
+          </div>
+      </div>
+      {% endblock %}

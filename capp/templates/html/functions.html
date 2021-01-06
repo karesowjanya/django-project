@@ -1,0 +1,78 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Learning {% endblock %}
+{% block content %}
+<div class="container card mt-2">
+	<div class="row">
+		<div class="card col-sm-2" style="background-color: #F5DEB3;">
+			<nav class="navbar" style="background-color: #F5DEB3;">
+			  <ul class="navbar-nav">
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'strt' %}">Introduction</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'cdf' %}">C Dataflow</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'funcs' %}">C Functions</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'arrays' %}">C Arrays</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'pointer' %}">C Pointers</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'stri' %}">C Strings</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'struct' %}">C Structures and unions</a>
+			    </li>
+			</nav>
+		</div>
+		<div class="col-sm">
+			<h1 class="text-warning text-center ml-2 mt-2">C Functions</h1><br>
+			<p>A function is a group of statements that together perform a task. Every C program has at least one function, which is <b>main(),</b> and all the most trivial programs can define additional functions.</p>
+			<p>You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task.</p>
+			<p>A function <b>declaration</b> tells the compiler about a function's name, return type, and parameters. A function <b>definition</b> provides the actual body of the function</p>
+			<p>The C standard library provides numerous built-in functions that your program can call. For example, <b>strcat()</b> to concatenate two strings, <b>memcpy()</b> to copy one memory location to another location, and many more functions.</p>
+			<p>A function can also be referred as a method or a sub-routine or a procedure, etc.</p>
+			<p> C provides two types of functions as shown in figure</p>
+			<center><img src="{% static 'images/c52.jpg' %}" width="70%"><p>fig(1).Types of functions</p></center><br>
+		</div>
+	</div>
+</div>
+<div class="container card">
+	<div class="container">
+		<br><h4 class="text-warning"> Function declaration syntax</h4>
+		<img src="{% static 'images/c6.jpg' %} " width="40%">
+		<br><h4 class="text-warning">Example</h4>
+		<div class="card mt-3 mr-5 ml-5">
+		<p>
+		<br>/* function returning the max between two numbers */<br>
+		<br>	int max(int num1, int num2) {
+
+		<br>   /* local variable declaration */
+		<br>   int result;
+			 
+		<br>   if (num1 > num2)
+		    <br>	  result = num1;
+		<br>	else
+		<br>    result = num2;
+			 
+		<br>   return result; 
+		<br>}
+			<p>
+		</div>
+		<div class="row ml-5 mt-5">
+			    <div classs="col-7 text-left mb-5 ml-4">
+			    	<a href="{% url 'cdf' %}" class="btn btn-warning">Previous</a>
+			    </div>
+			    <div class="col text-right mb-5 mr-5">
+			    	<a href="{% url 'arrays' %}" class="btn btn-warning">Next</a>
+			    </div>
+			</div>
+	</div>
+</div>
+
+{% endblock %}

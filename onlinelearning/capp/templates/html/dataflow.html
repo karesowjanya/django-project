@@ -1,0 +1,101 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Learning {% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row mt-1">
+		<div class="card col-sm-2" style="background-color: #F5DEB3;">
+			<nav class="navbar" style="background-color: #F5DEB3;">
+			  <ul class="navbar-nav">
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'strt' %}">Introduction</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="{% url 'cdf' %}">C Dataflow</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">C Functions</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">C Arrays</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">C Pointers</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">C Strings</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">C Structures and unions</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">Example programs</a>
+			    </li>
+			</nav>
+		</div>
+		<div class="card col-sm-9 mt-1 ml-2">
+			<b><h1 class="text-warning text-center ml-2 mt-2">C FlowControl</h1></b>
+			<p>
+				 In the term software or computer programming, it has a set of instruction (in simple or complex form) called program. These instructions are also called statements, which occurs sequentially or in either conditional way or in the iterative way. To handle such types of statements some flow controls required. These flow controls are called <b>Control Statements</b></p>
+			<p>
+				In other words, the control statements are used to control the cursor in a program according to the condition or according to the requirement in a loop. There are mainly three types of control statements or flow controls. These are illustrated as below:
+			</p>
+							
+			<h6 class="mt-2">C programing language have 3 flowcontrol statements</h6>
+			<ul class="mt-2">
+				<li>Branching Statements</li>
+				<li>Looping Statements</li>
+				<li>Jumping Statements</li>
+			</ul>
+			<h4 class="text-warning">Branching Statements:</h4>
+			<ol>
+				<li>if statement</li>
+				<ul>
+					<li>simple if</li>
+					<li>is-else</li>
+					<li>nested is</li>
+					<li>else if ladder</li>
+				</ul>
+				<li>switch statement</li>
+				<li>conditional operator statement</li>
+			</ol><br>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="container">
+			<br><h5> if statement</h5><br>
+			<p>   The if statement is a powerful decision making statement which can handle a single condition or group of statements. These have either true or false action....
+            When only one condition occurs in a statement, then simple if statement is used having one block.</p>
+            <div class="card mr-4">
+				<h6>/*Any Number is input through the keyboard. write a If program.*/<h6>
+
+				<br>#include< stdio.h >
+				<br>#include< conio.h >
+				<br>void main()
+				<br>{
+				    <br>int n;
+				    <br>n=1;
+				    <br>clrscr(); //clrscr() is the function of #include< conio.h > header file which <br>will clear previous output of program
+				    <br>printf("Enter the Number");
+				    <br>scanf("%d",&n);
+				    <br>if(n>0)
+				    <br>{
+				       <br> printf("It is If Statement");
+				    <br>}
+				    <br>getch();
+				<br>}
+			</div><br>
+			<b> if-else statement</b>
+			<p> This statement also has a single condition with two different blocks. One is true block and other is false block...
+			</p>
+			<b>Else if statement</b>
+			<p> When in a complex problem number of condition arise in a sequence, then we can use Ladder-if or else if statement to solve the problem in a simple manner.</p>
+			<b>switch statement</b>
+			<p>  When number of conditions (multiple conditions) occurs in a problem and it is very difficult to solve such type of complex problem with the help of ladder if statement, then there is need of such type of statement which should have different alternatives or different cases to solve the problem in simple and easy way. For this purpose switch statement is used. .</p>
+			<b>Conditional operator statement</b>
+			<p>The conditional operator is also known as a ternary operator. The conditional statements are the decision-making statements which depends upon the output of the expression. It is represented by two symbols, i.e., '?' and ':'.</p>
+		    </div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>c onlineexam</title>
+	<script>
+		function getanswer()
+		{
+			document.getElementById(userans).innerHTML="";
+			var e=document.getElementsByName('input');
+			for(i=0;<=e.length;i++)
+			{
+				if(e[i].type=="radio")
+				{
+					if(e[i].checked)
+					{
+						document.getElementById(userans).innerHTML+=""
+
+                     
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h2> c quiz </h2>
+	</center>
+	<div style="padding-left: 30px;">
+		{% for result in Exam %}
+		<table>
+			<tr>
+				<td>{{result.id}} ) {{result.question}}</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id ="option1" name="{{result.id}}" value="{result.option1}">{{result.option1}}</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id ="option2" name="{{result.id}}" value="{result.option2}">{{result.option2}}</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id ="option3" name="{{result.id}}" value="{result.option3}">{{result.option3}}</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id ="option4" name="{{result.id}}" value="{result.option4}">{{result.option4}}</td>
+			</tr>
+			<tr>
+				<td><lable id="corrans" style="display: none; color: green;"><b>{{result.corrans}}</b></lable></td>
+			</tr>
+			<hr/>
+		</table>
+		{% endfor %}
+		<hr/>
+		<input type="submit" value="click for results" id="but1">
+		<b id="userans"></b>
+	</div>
+</body>
+</html>
